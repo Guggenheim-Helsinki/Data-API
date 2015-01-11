@@ -9,9 +9,17 @@
 
         <style>
           img{
+            width:250px;
+            height:auto;
+          }
+
+          .item{
             display:block;
             float:left;
             margin:0 10px 10px 0;
+            width:250px;
+            height:400px;
+            overflow:hidden;
           }
         </style>
 
@@ -39,36 +47,46 @@
               // Construct the URL
               var endpoint = "https://s3-us-west-2.amazonaws.com/api.designguggenheimhelsinki.org";
               var version = "v1";
-              var directory = "directory.json";
+              var identifiers = "identifiers.json";
               var data_dir = "data/v1";
 
-              var url = endpoint + "/" + version + "/" + directory;
+              var url = endpoint + "/" + version + "/" + identifiers;
 
               // Get the directory and then use it to get the files
               $.get( url, function(data){
-                console.log('success'); // log success
-
                 // Prepare the submissions array
-                var data_object = $.parseJSON(data); // parse JSON response into javascript object
-                var submissions = data_object.submissions;
+                var submissions = $.parseJSON(data); // parse JSON response into javascript array
 
-                // Cycle through the first ten submissions and add to the DOM
+                // Cycle through the first MAX_COUNT submissions and add to the DOM
                 var src = ""; // container for image source
                 var filename = ""; // container for image filename
-                for(var i = 0; i < 2; i++){
 
-                    console.dir(submissions[i]);
+                var total_files = 1715;
+                var MAX_COUNT = 30;
 
-                    filename = submissions[i].data.images.press_image_1;
+                // Set up random interval
+                var start_index = Math.floor( Math.random()*(total_files - MAX_COUNT) );
+                var end_index = start_index + MAX_COUNT;
 
-                    src = endpoint + "/" + version + "/" + data_dir + "/" + submissions[i].id + "/" + filename;
+                // Loop through submissions and add press image 1 to DOM
+                for(var i = start_index; i < end_index; i++){
 
-                    var html = '<img width="250" height="auto" src="' + src + '" />';
-                    $('#data').append( html ); // add to DOM
-                }
+                  var id = submissions[i]; // get the id from the submissions array
+
+                  filename = id + "-partC1.jpg"; // construct the filename
+
+                  // construct the image src URL
+                  src = endpoint + "/" + version + "/" + data_dir + "/" + id + "/" + filename;
+
+                  // add to the DOM
+                  var caption = '<caption>' + id + '</caption>';
+                  var img = '<img src="' + src + '" />';
+                  var html = '<div class="item">' + img + caption + '</div>';
+
+                  $('#data').append( html );
+                }//end for
 
               });//end get
-
 
               // Clean up
               $(this).prop('disabled', true); // disable the button
