@@ -1,0 +1,33 @@
+{
+  "submissions": [
+    {
+      "id": "GH-03631231",
+      "data": {
+        "pdfs": {
+          "description": "GH-03631231-partA.pdf",
+          "boards": "GH-03631231-partB",
+          "summary": "GH-03631231-partC3.pdf"
+        },
+        "images": {
+          "press_image_1": "GH-03631231-partC1.jpg",
+          "press_image_2": "GH-03631231-partC2.jpg"
+        }
+      }
+    },
+
+    {
+      "id": "GH-03673815",
+      "data": {
+        "pdfs": {
+          "description": "GH-03673815-partA.pdf",
+          "boards": "GH-03673815-partB",
+          "summary": "GH-03673815-partC3.pdf"
+        },
+        "images": {
+          "press_image_1": "GH-03673815-partC1.jpg",
+          "press_image_2": "GH-03673815-partC2.jpg"
+        }
+      }
+    }
+  ]
+}

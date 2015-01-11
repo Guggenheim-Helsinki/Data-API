@@ -6,7 +6,14 @@
         <title>Example Guggenheim Helsinki API Javascript Call</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        
+        <style>
+          img{
+            display:block;
+            float:left;
+            margin:0 10px 10px 0;
+          }
+        </style>
 
     </head>
     <body>
@@ -48,7 +55,7 @@
                 // Cycle through the first ten submissions and add to the DOM
                 var src = ""; // container for image source
                 var filename = ""; // container for image filename
-                for(var i = 0; i < 1; i++){
+                for(var i = 0; i < 2; i++){
 
                     console.dir(submissions[i]);
 
@@ -56,7 +63,7 @@
 
                     src = endpoint + "/" + version + "/" + data_dir + "/" + submissions[i].id + "/" + filename;
 
-                    var html = '<img src="' + src + '" />';
+                    var html = '<img width="250" height="auto" src="' + src + '" />';
                     $('#data').append( html ); // add to DOM
                 }
 
