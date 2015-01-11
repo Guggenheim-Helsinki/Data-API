@@ -1,0 +1,78 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Example Guggenheim Helsinki API Javascript Call</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    </head>
+    <body>
+
+        <p>Hello world! This is a sample Guggenheim Helsinki API call using Javascript. For more information, visit the Guggenheim Helsinki Github organization.</p>
+
+        <p>Below there should appear a stack of images pulled from the API. Inspect the code to see how this functions.<p>
+
+        <button id="execute">Click here to call the API</button>
+
+
+        <!-- This is an empty div element that the javascript code below will dynamically fill when the button is clicked -->
+        <div id="data"></div>
+
+        <!-- Load jQuery for help with the AJAX call -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+        <!-- Here's the javascript to make the call, it can be saved in an external file and linked in as well -->
+        <script>
+          $(document).ready(function(){
+            $('#execute').click(function(){
+
+              // Construct the URL
+              var endpoint = "https://s3-us-west-2.amazonaws.com/api.designguggenheimhelsinki.org";
+              var version = "v1";
+              var directory = "directory.json";
+              var data_dir = "data";
+
+              var url = endpoint + "/" + version + "/" + directory;
+
+              // Get the directory and then use it to get the files
+              $.get( url, function(data){
+                console.log('success'); // log success
+
+                // Prepare the submissions array
+                var data_object = $.parseJSON(data); // parse JSON response into javascript object
+                var submissions = data_object.submissions;
+
+                // Cycle through the first ten submissions and add to the DOM
+                var src = ""; // container for image source
+                var filename = ""; // container for image filename
+                for(var i = 0; i < 1; i++){
+
+                    console.dir(submissions[i]);
+
+                    filename = submissions[i].data.images.press_image_1;
+
+                    src = endpoint + "/" + version + "/" + data_dir + "/" + submissions[i].id + "/" + filename;
+
+                    var html = '<img src="' + src + '" />"';
+                    $('#data').append( html ); // add to DOM
+                }
+
+              });//end get
+
+
+              // Clean up
+              $(this).prop('disabled', true); // disable the button
+              $(this).text('Thanks for playing!'); //change the button text
+              $(this).unbind('click'); //only allow the click to work once
+            });
+
+          });
+
+        </script>
+
+
+    </body>
+</html>
