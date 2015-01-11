@@ -46,6 +46,7 @@ The identifiers are listed in the `identifiers.json` file as a simple array. The
 
 Alternatively, the `directory.json` file can be used to access the files. This document provides URLs to each file explicitly and may later be used to present additional metadata about each submission. Subsequent versions of the API will likely present an interface similar to that of this document once a full database is in place.
 
+**Note: the `directory.json` file will be uploaded shortly.
 
 ## Accessing the Data
 
