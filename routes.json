@@ -1,7 +1,7 @@
 {
   "url_stub": "https://s3-us-west-2.amazonaws.com/api.designguggenheimhelsinki.org",
   "version": "v1",
-  "data_dir": "data",
+  "data_dir": "data/v1",
   "directory": "directory.json",
   "submission_stubs": {
     "unique_identifier": "id",
