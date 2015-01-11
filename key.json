@@ -1,0 +1,25 @@
+{
+  "submission": {
+    "id": "Unique randomly assigned identifier",
+    "data":{
+      "pdfs": {
+        "summary": "150 word summary of the design concept",
+        "description": "500 word explanation of the design concept",
+        "boards": "Boards are numbered and represent the key project criteria. Each board will
+establish the competitor’s approach. Boards may contain a mix of media such as
+drawings, words, sketches, photos, and visualizations."
+      },
+      "images": {
+        "press_image_1": "Representative image taken from boards",
+        "press_image_2": "Representative image taken from boards"
+      },
+      "plain_text": {
+        "summary": "150 word summary of the design concept in plain text",
+        "description": "500 word explanation of the design concept in plain text"
+      }
+    },
+    "metadata": {
+      "tags": "Characterists of the submission"
+    }
+  }
+}

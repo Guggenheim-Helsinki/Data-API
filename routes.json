@@ -1,0 +1,21 @@
+{
+  "url_stub": "https://s3-us-west-2.amazonaws.com/api.designguggenheimhelsinki.org",
+  "version": "v1",
+  "data_dir": "data",
+  "directory": "directory.json",
+  "submission_stubs": {
+    "unique_identifier": "id",
+    "data":{
+      "pdfs": {
+        "description": "-partA.pdf",
+        "boards": "-partB.pdf",
+        "summary": "-partC3.pdf"
+      },
+      "images": {
+        "press_image_1": "-partC1.jpg",
+        "press_image_2": "-partC2.jpg"
+      }
+    },
+    "metadata": "coming soon"
+  }
+}
