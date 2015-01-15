@@ -2,7 +2,9 @@
 
 The Guggenheim Helsinki open anonymous architecture competition attracted 1,715 entries from 77 countries, the largest in history. The Solomon R. Guggenheim Foundation has published some images and text of all submissions through an [online gallery](http://designguggenheimhelsinki.org/stageonegallery/), and through the API publishes the full data set of submissions.
 
-The data is stored in an Amazon S3 cloud server that can be accessed through any web browser. Over time, we may develop interfaces for this information, but currently it requires understanding and using the API. An example webpage that pulls a random collection of images from the data set via the API is viewable [here](https://s3-us-west-2.amazonaws.com/api.designguggenheimhelsinki.org/v1/examples/index.html) and can be studied to understand how it works.
+The data is stored in an Amazon S3 cloud server that can be accessed through any web browser. A list of these links has been made available through the [Index project](https://github.com/Guggenheim-Helsinki/Index), a software repository that uses the Data API to present the links. This can be used to download individual files by visiting the live site [here](https://s3-us-west-2.amazonaws.com/api.designguggenheimhelsinki.org/v1/index/index.html) and studied as a reference project.
+
+A more simple example webpage that pulls a random collection of images from the data set via the API is included in the `/examples` folders of this repository and is viewable online [here](https://s3-us-west-2.amazonaws.com/api.designguggenheimhelsinki.org/v1/examples/index.html). It can be studied to understand how it works.
 
 This README file documents the contents available through the API and where to find them.
 
