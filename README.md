@@ -56,8 +56,12 @@ Alternatively, the `directory.json` file can be used to access the files. This d
 
 In order to access the data, each file URL must be constructed using the information above. An example in HTML/Javascript has been provided in the `/examples` folder and can be inspected online [here](https://s3-us-west-2.amazonaws.com/api.designguggenheimhelsinki.org/v1/examples/index.html).
 
-An example URL will look like:
-`https://s3-us-west-2.amazonaws.com/api.designguggenheimhelsinki.org/v1/data/v1/GH-03631231/GH-03631231-partB.jpg`
+Example URLs will look like:
+`https://s3-us-west-2.amazonaws.com/api.designguggenheimhelsinki.org/v1/data/v1/GH-03631231/GH-03631231-partA.pdf`
+`https://s3-us-west-2.amazonaws.com/api.designguggenheimhelsinki.org/v1/data/v1/GH-03631231/GH-03631231-partB.pdf`
+`https://s3-us-west-2.amazonaws.com/api.designguggenheimhelsinki.org/v1/data/v1/GH-03631231/GH-03631231-partC1.jpg`
+`https://s3-us-west-2.amazonaws.com/api.designguggenheimhelsinki.org/v1/data/v1/GH-03631231/GH-03631231-partC2.jpg`
+`https://s3-us-west-2.amazonaws.com/api.designguggenheimhelsinki.org/v1/data/v1/GH-03631231/GH-03631231-partC3.pdf`
 
 The `directory.json` file can also be found online at:
 `https://s3-us-west-2.amazonaws.com/api.designguggenheimhelsinki.org/v1/directory.json`
